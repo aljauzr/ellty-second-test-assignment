@@ -14,10 +14,11 @@ A full-stack application where people communicate through numbers instead of tex
 ## Tech Stack
 
 ### Backend
-- Node.js 20
+- Node.js 24
 - Express.js 4.x
 - TypeScript 5.x
-- SQLite with better-sqlite3
+- SQLite with better-sqlite3 (Docker)
+- Turso - cloud SQLite (Vercel)
 - JWT for authentication
 - bcrypt.js for password hashing
 
