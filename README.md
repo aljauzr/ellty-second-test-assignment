@@ -13,9 +13,25 @@ A full-stack application where people communicate through numbers instead of tex
 
 ## Tech Stack
 
-- **Backend**: Node.js, Express, TypeScript, SQLite
-- **Frontend**: React, TypeScript
-- **Containerization**: Docker, Docker Compose
+### Backend
+- Node.js 20
+- Express.js 4.x
+- TypeScript 5.x
+- SQLite with better-sqlite3
+- JWT for authentication
+- bcrypt.js for password hashing
+
+### Frontend
+- React 18.2
+- TypeScript 5.x
+- Vite 5.x (build tool)
+- Axios for HTTP requests
+- Context API for state management
+
+### Containerization
+- Docker
+- Docker Compose
+- Nginx (for serving frontend in production)
 
 ## Prerequisites
 
@@ -80,12 +96,40 @@ The frontend will start on http://localhost:3000
 - `POST /api/calculations/start` - Create a starting number (requires auth)
 - `POST /api/calculations/operate` - Add an operation (requires auth)
 
-## Running Tests
+## Testing
+
+### Running Tests
 
 ```bash
 cd backend
 npm test
 ```
+
+### Test Results
+
+```
+ PASS  src/services/calculationService.test.ts
+  CalculationService
+    calculate
+      - should add two numbers correctly
+      - should subtract two numbers correctly
+      - should multiply two numbers correctly
+      - should divide two numbers correctly
+      - should throw error for division by zero
+      - should throw error for unknown operation
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+```
+
+### Test Coverage
+
+| File                    | Statements | Branches | Functions | Lines   |
+|-------------------------|------------|----------|-----------|---------|
+| database.ts             | 90.9%      | 66.66%   | 100%      | 90.9%   |
+| calculationService.ts   | 21.56%     | 46.15%   | 11.11%    | 22.44%  |
+
+The tests focus on the core calculation logic, verifying that all mathematical operations (addition, subtraction, multiplication, division) work correctly, including edge cases like division by zero.
 
 ## Project Structure
 
