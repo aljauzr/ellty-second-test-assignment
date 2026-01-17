@@ -1,0 +1,104 @@
+.operation-form {
+  margin: 10px 0;
+  padding: 15px;
+  background: #f0f8ff;
+  border-radius: 6px;
+  border: 1px solid #bee3f8;
+}
+
+.operation-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.preview-left {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  min-width: 50px;
+}
+
+.operation-select {
+  padding: 8px 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.operand-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.operand-input:focus {
+  outline: none;
+  border-color: #047a50;
+}
+
+.preview-equals {
+  font-size: 18px;
+  color: #666;
+}
+
+.preview-result {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2d8659;
+  min-width: 50px;
+}
+
+.operation-error {
+  margin-top: 10px;
+  padding: 8px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  color: #c00;
+  font-size: 13px;
+}
+
+.operation-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.submit-btn {
+  padding: 8px 16px;
+  background: #047a50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn:hover {
+  background: #047a50;
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  background: #eee;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancel-btn:hover {
+  background: #ddd;
+}
