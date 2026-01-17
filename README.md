@@ -60,12 +60,48 @@ A full-stack application where people communicate through numbers instead of tex
    docker-compose down
    ```
 
+## Deploy to Vercel (Production)
+
+### Step 1: Create Turso Database
+
+1. Go to [Turso](https://turso.tech) and create a free account
+2. Install Turso CLI:
+   ```bash
+   # Windows (PowerShell)
+   irm https://get.turso.tech/install.ps1 | iex
+   
+   # Or using npm
+   npm install -g @tursodatabase/cli
+   ```
+3. Login and create database:
+   ```bash
+   turso auth login
+   turso db create number-discussions
+   turso db show number-discussions --url
+   turso db tokens create number-discussions
+   ```
+4. Save the URL and token for later
+
+### Step 2: Deploy to Vercel
+
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com) and import your repository
+3. Add environment variables in Vercel dashboard:
+   - `TURSO_DATABASE_URL` = your Turso database URL
+   - `TURSO_AUTH_TOKEN` = your Turso auth token
+   - `JWT_SECRET` = any random secret string
+4. Click Deploy
+
+### Step 3: Done!
+
+Your app will be live at `https://your-project.vercel.app`
+
 ## Local Development (Without Docker)
 
-### Backend
+### Backend (API)
 
 ```bash
-cd backend
+cd api
 npm install
 npm run dev
 ```
@@ -77,7 +113,7 @@ The backend will start on http://localhost:3001
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
 ```
 
 The frontend will start on http://localhost:3000
