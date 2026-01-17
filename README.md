@@ -171,27 +171,39 @@ The tests focus on the core calculation logic, verifying that all mathematical o
 ## Project Structure
 
 ```
-├── backend/
+├── api/                        # Backend for Vercel (Turso)
 │   ├── src/
-│   │   ├── middleware/     # Auth middleware
-│   │   ├── routes/         # API routes
-│   │   ├── services/       # Business logic
-│   │   ├── database.ts     # SQLite setup
-│   │   ├── index.ts        # Express app
-│   │   └── types.ts        # TypeScript types
+│   │   ├── middleware/         # Auth middleware
+│   │   ├── routes/             # API routes
+│   │   ├── services/           # Business logic
+│   │   ├── database.ts         # Turso database setup
+│   │   ├── index.ts            # Express app (local dev)
+│   │   └── types.ts            # TypeScript types
+│   ├── index.ts                # Vercel serverless handler
+│   └── package.json
+├── backend/                    # Backend for Docker (SQLite)
+│   ├── src/
+│   │   ├── middleware/         # Auth middleware
+│   │   ├── routes/             # API routes
+│   │   ├── services/           # Business logic
+│   │   ├── database.ts         # SQLite setup
+│   │   ├── index.ts            # Express app
+│   │   └── types.ts            # TypeScript types
 │   ├── Dockerfile
 │   └── package.json
 ├── frontend/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── App.tsx         # Main app
-│   │   ├── api.ts          # API client
-│   │   ├── AuthContext.tsx # Auth state management
-│   │   └── types.ts        # TypeScript types
+│   │   ├── components/         # React components
+│   │   ├── App.tsx             # Main app
+│   │   ├── api.ts              # API client
+│   │   ├── AuthContext.tsx     # Auth state management
+│   │   └── types.ts            # TypeScript types
 │   ├── Dockerfile
 │   └── package.json
-├── docker-compose.yml
+├── docker-compose.yml          # Docker configuration
+├── vercel.json                 # Vercel configuration
+├── .nvmrc                      # Node.js version
 └── README.md
 ```
 
